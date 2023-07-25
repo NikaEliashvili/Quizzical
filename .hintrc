@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "detect-css-reflows/composite": "off",
+    "detect-css-reflows/paint": "off",
+    "detect-css-reflows/layout": "off"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_chr <= 113",
+    "not chrome <= 113",
+    "not edge <= 113",
+    "not firefox <= 113",
+    "not safari <= 16.5",
+    "not samsung <= 20"
+  ]
+}
