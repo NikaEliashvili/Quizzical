@@ -10,10 +10,13 @@ export default function QuizPage(props) {
   const [showFeedback, setShowFeedback] = useState(false);
   const [feedbackClasses, setFeedbackClasses] = useState([]);
   const [formData, setFormData] = useState({});
-
+  // https://opentdb.com/api.php?amount=10
+  // console.log("In Quiz Page", props.quizPref);
+  const { amount, difficulty, category } = props.quizPref;
+  console.log(amount, difficulty, category);
   useEffect(() => {
     fetch(
-      "https://opentdb.com/api.php?amount=5&category=21&difficulty=medium&type=multiple"
+      `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -21,6 +24,7 @@ export default function QuizPage(props) {
         const shuffledData = data.results.map((question) => {
           question.question = decode(question.question);
           question.correct_answer = decode(question.correct_answer);
+          question.incorrect_answer = decode(question.incorrect_answer);
           const allAnswers = [
             question.correct_answer,
             ...question.incorrect_answers,

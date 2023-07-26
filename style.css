@@ -54,7 +54,6 @@ h6 {
 .imageOne {
     position: fixed;
     width: 300px;
-    background-color: transparent;
     bottom: -6rem;
     left: -6rem;
     transform: rotate(45deg);
@@ -66,8 +65,14 @@ h6 {
     top: -10rem;
     right: -10rem;
     z-index: -1;
-
 }
+
+.imageOne,
+.imageSecond {
+    animation: imagesAnim 15s linear infinite;
+}
+
+
 
 .btn {
     display: block;
@@ -144,7 +149,6 @@ hr {
 
 
 .answers-div label {
-    /* background-color: #263275; */
     width: 100%;
     text-align: left;
     border: 2px solid #8f98c8;
@@ -189,4 +193,60 @@ hr {
     color: #293264;
     font-size: 1.2rem;
     font-weight: 700;
+}
+
+
+
+
+.form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: -1rem 0 -3.5rem;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.form label {
+    font-family: inherit;
+    font-weight: 600;
+    color: #293264;
+}
+
+.form input,
+.form select {
+    font-family: inherit;
+    font-size: 0.95rem;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: #d9ddf5;
+    color: #263275;
+    outline-color: none;
+}
+
+.form select>option {
+    font-family: inherit;
+    font-weight: 400;
+}
+
+@keyframes imagesAnim {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
