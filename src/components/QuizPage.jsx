@@ -8,12 +8,8 @@ export default function QuizPage(props) {
   const [buttonPlayAgain, setButtonPlayAgain] = useState(false);
   const [countCorrectAnswers, setCountCorrectAnswers] = useState(0);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [feedbackClasses, setFeedbackClasses] = useState([]);
   const [formData, setFormData] = useState({});
-  // https://opentdb.com/api.php?amount=10
-  // console.log("In Quiz Page", props.quizPref);
   const { amount, difficulty, category } = props.quizPref;
-  console.log(amount, difficulty, category);
   useEffect(() => {
     fetch(
       `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
@@ -72,7 +68,6 @@ export default function QuizPage(props) {
           question.correct_answer === formData[question.question];
         return isCorrect ? "correct" : "incorrect";
       });
-      setFeedbackClasses(feedback);
       setShowFeedback(true);
 
       const correctCount = quizData.filter((question) => {

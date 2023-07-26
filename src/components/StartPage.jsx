@@ -16,7 +16,6 @@ export default function StartPage(props) {
       };
     });
   }
-  console.log(formData);
   return (
     <div className="pageone">
       <img className="imageOne" src="../../images/blobs-blue.svg" />
