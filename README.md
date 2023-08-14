@@ -8,6 +8,6 @@ This app is built in HTML5, CSS And React(Vite).
 
 
 
-CHECK This App Here:
+CHECK This App Here
 
 https://quizzical-react-app-withapi.netlify.app/
